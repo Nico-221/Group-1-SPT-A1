@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fotify - Spotify Clone</title>
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<!-- ✅ Matches your renamed CSS file -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app-container">
+  <!-- Left Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <i class="fa-brands fa-spotify"></i>
+      <span>Fotify</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-link active">
+        <i class="fas fa-house"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-link">
+        <i class="fas fa-magnifying-glass"></i>
+        <span>Search</span>
+      </a>
+      <a href="#" class="nav-link">
+        <i class="fas fa-book"></i>
+        <span>Your Library</span>
+      </a>
+    </nav>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-playlists">
+      <p class="playlist-heading">Your Playlists</p>
+      <a href="#" class="playlist-link">Liked Songs</a>
+      <a href="#" class="playlist-link">Daily Mix 1</a>
+      <a href="#" class="playlist-link">Chill Hits</a>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <header class="topbar">
+      <div class="nav-arrows">
+        <button class="arrow-btn"><i class="fas fa-chevron-left"></i></button>
+        <button class="arrow-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <div class="search-box">
+        <i class="fas fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="What do you want to listen to?">
+      </div>
+      <div class="user-profile">
+        <button class="upgrade-btn">Upgrade</button>
+        <div class="user-avatar">U</div>
+      </div>
+    </header>
+
+    <section class="content-section">
+      <h2 class="section-title">Featured Songs</h2>
+      <div class="song-grid">
+
+        <div class="song-card"
+          data-title="Faded"
+          data-artist="Alan Walker"
+          data-src="Music/Faded.mp3"
+          data-lyrics="You were the shadow to my light
+Did you feel us?
+Another star, you fade away
+Afraid our aim is out of sight
+Wanna see us, alight">
+          <div class="card-image">
+            <img src="https://picsum.photos/300/300?101" alt="Faded - Alan Walker">
+            <button class="play-card-btn"><i class="fas fa-play"></i></button>
+          </div>
+          <h3 class="song-name">Faded</h3>
+          <p class="song-artist">Alan Walker</p>
+        </div>
+
+        <div class="song-card"
+          data-title="Perfect"
+          data-artist="Ed Sheeran"
+          data-src="Music/Perfect.mp3"
+          data-lyrics="I found a love for me
+Darling, just dive right in and follow my lead
+Well, I found a girl, beautiful and sweet
+Oh, I never knew you were the someone waiting for me">
+          <div class="card-image">
+            <img src="https://picsum.photos/300/300?102" alt="Perfect - Ed Sheeran">
+            <button class="play-card-btn"><i class="fas fa-play"></i></button>
+          </div>
+          <h3 class="song-name">Perfect</h3>
+          <p class="song-artist">Ed Sheeran</p>
+        </div>
+
+        <div class="song-card"
+          data-title="Grenade"
+          data-artist="Bruno Mars"
+          data-src="Music/Grenade.mp3"
+          data-lyrics="Easy come, easy go
+That's just how you live, oh
+Take, take, take it all
+But you never give">
+          <div class="card-image">
+            <img src="https://picsum.photos/300/300?103" alt="Grenade - Bruno Mars">
+            <button class="play-card-btn"><i class="fas fa-play"></i></button>
+          </div>
+          <h3 class="song-name">Grenade</h3>
+          <p class="song-artist">Bruno Mars</p>
+        </div>
+
+        <div class="song-card"
+          data-title="Blank Space"
+          data-artist="Taylor Swift"
+          data-src="Music/Blank-space.mp3"
+          data-lyrics="Nice to meet you, where you been?
+I could show you incredible things
+Magic, madness, heaven, sin
+Saw you there and I thought">
+          <div class="card-image">
+            <img src="https://picsum.photos/300/300?104" alt="Blank Space - Taylor Swift">
+            <button class="play-card-btn"><i class="fas fa-play"></i></button>
+          </div>
+          <h3 class="song-name">Blank Space</h3>
+          <p class="song-artist">Taylor Swift</p>
+        </div>
+
+      </div>
+
+      <div class="lyrics-panel">
+        <div id="lyrics-bg" class="lyrics-bg"></div>
+        <div class="lyrics-content">
+          <h2>Lyrics</h2>
+          <pre id="lyrics-display">Select a song to see lyrics...</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Fixed Bottom Player Bar -->
+<footer class="player-bar">
+  <div class="now-playing">
+    <img id="player-cover" src="https://picsum.photos/60/60" alt="Album art">
+    <div class="track-info">
+      <h4 id="track-title">No Song Playing</h4>
+      <p id="track-artist">Select a song to start</p>
+    </div>
+    <button class="like-btn"><i class="far fa-heart"></i></button>
+  </div>
+
+  <div class="player-controls">
+    <div class="control-buttons">
+      <button id="shuffle-btn" class="ctrl-btn"><i class="fas fa-shuffle"></i></button>
+      <button id="prev-track" class="ctrl-btn"><i class="fas fa-backward-step"></i></button>
+      <button id="play-pause" class="play-btn"><i class="fas fa-play"></i></button>
+      <button id="next-track" class="ctrl-btn"><i class="fas fa-forward-step"></i></button>
+      <button id="repeat-btn" class="ctrl-btn"><i class="fas fa-repeat"></i></button>
+    </div>
+    <div class="progress-container">
+      <span id="current-time">0:00</span>
+      <div id="progress-bar" class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <span id="total-time">0:00</span>
+    </div>
+  </div>
+
+  <div class="extra-controls">
+    <button class="ctrl-btn"><i class="fas fa-microphone"></i></button>
+    <button class="ctrl-btn"><i class="fas fa-list"></i></button>
+    <button class="ctrl-btn"><i class="fas fa-computer"></i></button>
+    <div class="volume-container">
+      <button id="mute-btn" class="ctrl-btn"><i class="fas fa-volume-high"></i></button>
+      <input type="range" id="volume-slider" min="0" max="100" value="70">
+    </div>
+  </div>
+</footer>
+
+<audio id="audio-player" preload="metadata">
+<script src="script.js"></script>
+</body>
+</html>
